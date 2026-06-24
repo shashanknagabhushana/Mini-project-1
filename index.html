@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Screening System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+<header class="hero">
+    <h1>Resume Screening & Application Tracking System</h1>
+    <p>Streamlining recruitment through automated candidate evaluation and tracking.</p>
+</header>
+
+<div class="dashboard">
+
+    <div class="card">
+        <h3>👥 Total Applicants</h3>
+        <p id="totalApps">0</p>
+    </div>
+
+    <div class="card">
+        <h3>🎯 Shortlisted</h3>
+        <p id="shortlisted">0</p>
+    </div>
+
+    <div class="card">
+        <h3>❌ Rejected</h3>
+        <p id="rejected">0</p>
+    </div>
+
+    <div class="card">
+        <h3>📈 Success Rate</h3>
+        <p id="successRate">0%</p>
+    </div>
+
+</div>
+    <div class="card">
+    <h3>📄 Applied</h3>
+    <p id="applied">0</p>
+</div>
+
+<div class="form-section">
+    <h2>Add Candidate</h2>
+
+    <input type="text" id="name" placeholder="Full Name">
+    <input type="email" id="email" placeholder="Email Address">
+    <input type="text" id="skills" placeholder="Skills (Java, Python, HTML)">
+    <input type="number" id="experience" placeholder="Experience (Years)">
+
+    <button onclick="addCandidate()">Add Candidate</button>
+</div>
+
+<div class="screening-section">
+    <h2>Resume Screening</h2>
+
+    <input type="text" id="requiredSkills" placeholder="Required Skills (Java, Python, React)">
+
+    <button onclick="screenCandidates()">Screen Candidates</button>
+    <button onclick="clearAllData()">Clear All Data</button>
+</div>
+
+<div class="search-section">
+    <input type="text" id="searchCandidate" placeholder="🔍 Search Candidate">
+</div>
+    <div class="filter-section">
+    <button onclick="filterCandidates('All')">All</button>
+    <button onclick="filterCandidates('Shortlisted')">Shortlisted</button>
+    <button onclick="filterCandidates('Rejected')">Rejected</button>
+</div>
+
+<div class="ai-section">
+    <h2>🤖 Smart Candidate Evaluation</h2>
+
+    <button onclick="generateAIReport()">
+        Generate AI Recommendation
+    </button>
+   <button onclick="downloadReport()">
+    📥 Download Report
+</button>
+    <div id="aiResult" class="ai-result">
+        AI recommendation will appear here.
+    </div>
+</div>
+
+<h2>Candidate List</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Skills</th>
+            <th>Experience</th>
+            <th>Match %</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+
+    <tbody id="candidateTable">
+    </tbody>
+</table>
+
+<footer>
+    <p>Developed by P N Shashank | Mini Project 2026</p>
+</footer>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
